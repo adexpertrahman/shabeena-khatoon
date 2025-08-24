@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mony Mekin Skils - Nasreen Fatima</title>
+
+  <!-- Meta Pixel Code (ID: 1548973649130912) -->
+  <script>
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1548973649130912');
+    fbq('track','PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1548973649130912&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    /* Global */
+    body{margin:0;padding:0;font-family:Arial,sans-serif;background:#000;color:#ffb642;}
+    @keyframes shakeY{0%,100%{transform:translateY(0)}25%{transform:translateY(-5px)}50%{transform:translateY(5px)}75%{transform:translateY(-3px)}}
+    @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-2px)}50%{transform:translateX(2px)}75%{transform:translateX(-1px)}}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+    /* Buttons */
+    .whatsapp-btn{display:inline-block;background:transparent;border:2px solid #25D366;padding:12px 25px;border-radius:30px;color:#25D366;text-decoration:none;font-weight:bold;font-size:15px;transition:background .3s,transform .3s;animation:shake 2s infinite;margin:10px 0;cursor:pointer}
+    .whatsapp-btn:hover{background:#25D366;color:#fff;transform:scale(1.05);}
+    .video-btn{display:inline-block;padding:12px 25px;background:#ffb642;color:#000;font-weight:bold;font-size:15px;border-radius:30px;animation:shakeY 1.5s infinite;text-align:center;box-shadow:0 0 8px rgba(255,182,66,.4);margin:20px 0;}
+
+    /* Layout/Sections */
+    .container{max-width:900px;margin:0 auto;padding:20px;}
+    .coach-intro{padding:40px 20px;text-align:center;max-width:900px;margin:auto;}
+    .coach-tag{background:#ffb642;color:#000;padding:8px 14px;border-radius:25px;font-size:14px;display:inline-block;margin-bottom:15px;animation:shake 1s infinite;}
+    .vision-box{background:#1a1a1a;padding:15px 20px;border-radius:12px;margin-bottom:25px;box-shadow:0 0 10px rgba(255,182,66,.2);}    
+    .counters{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-bottom:30px;}
+    .counter-box{background:#1a1a1a;border-radius:10px;padding:20px 30px;box-shadow:0 0 10px rgba(255,182,66,.3);min-width:120px;}
+
+    .skills-section{padding:30px 10px;text-align:center;}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:15px;justify-items:center;max-width:700px;margin:0 auto;}
+    .feature-box{background:linear-gradient(145deg,#1a1a1a,#111);padding:15px 10px;border-radius:12px;box-shadow:0 0 8px rgba(255,182,66,.15);width:100%;max-width:150px;transition:transform .3s,box-shadow .3s;cursor:pointer;}
+    .feature-box:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 0 15px rgba(255,182,66,.4);}    
+    .feature-icon{font-size:25px;background:radial-gradient(circle,#ffb642,#c27803);color:#000;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;transition:transform .4s;}
+    .feature-box:hover .feature-icon{transform:scale(1.2) rotate(10deg);}    
+
+    .process-section{max-width:700px;margin:40px auto;padding:0 20px;}
+    .card{background:#1a1a1a;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(255,182,66,.1);display:flex;align-items:flex-start;gap:15px;opacity:0;transform:translateX(100px);margin-bottom:20px;}
+    .animate-left{transform:translateX(-100px);}    
+    .visible{opacity:1!important;transform:translateX(0)!important;}
+    .step{background:#ffb642;color:#000;border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:16px;flex-shrink:0;box-shadow:0 0 8px rgba(255,182,66,.4);}    
+
+    .faq-section{max-width:700px;margin:auto;padding:40px 20px;background:#111;border-radius:10px;animation:fadeIn 1s both;color:#ffb642;box-shadow:0 0 12px rgba(255,182,66,.15);}    
+    .faq-item{background:#1a1a1a;border-radius:8px;margin-bottom:12px;box-shadow:0 2px 6px rgba(255,182,66,.05);overflow:hidden;transition:all .3s;}
+    .faq-question{padding:15px 20px;cursor:pointer;font-weight:bold;font-size:15px;position:relative;background:#1a1a1a;color:#f0c975;}
+    .faq-question::after{content:'▼';position:absolute;right:20px;color:#ffb642;transition:transform .3s;}
+    .faq-item.active .faq-question::after{transform:rotate(180deg);}    
+    .faq-answer{max-height:0;overflow:hidden;background:#222;padding:0 20px;font-size:14px;color:#e0d4b0;transition:all .4s;}
+    .faq-item.active .faq-answer{padding:15px 20px;max-height:500px;}
+
+    .cta-section{max-width:800px;margin:40px auto;padding:50px 20px;text-align:center;background:linear-gradient(45deg,#1a1a1a,#000);border-radius:15px;box-shadow:0 0 20px rgba(255,182,66,.2);}    
+    .footer{text-align:center;font-size:13px;color:#ffb642;margin-top:30px;padding:20px 15px;border-top:1px solid rgba(255,182,66,.2);font-weight:bold;line-height:1.6;}
+
+    /* Modal Form */
+    .modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.8);justify-content:center;align-items:center;}
+    .modal-content{background:#1a1a1a;padding:20px;border-radius:10px;width:90%;max-width:420px;box-shadow:0 0 15px rgba(255,182,66,.3);text-align:left;position:relative;}
+    .modal-content h2{color:#ffb642;text-align:center;margin-top:0;}
+    .modal-content label{display:block;color:#f0c975;margin:10px 0 5px;font-weight:bold;}
+    .modal-content input,.modal-content select{width:100%;padding:10px;border-radius:6px;border:1px solid #555;background:#111;color:#fff;margin-bottom:12px;}
+    .modal-content button{width:100%;padding:12px;background:#25D366;border:none;border-radius:30px;font-weight:bold;font-size:15px;color:#fff;cursor:pointer;}
+    .modal-content button:hover{background:#1da851;}
+    .close-btn{position:absolute;top:10px;right:15px;font-size:20px;color:#fff;cursor:pointer;}
+
+    @media(max-width:480px){.feature-box{max-width:100%}.counters{flex-direction:column;align-items:center}}
+  </style>
+</head>
+<body>
+
+  <!-- Top CTA -->
+  <div style="text-align:center;margin-top:30px;">
+    <div class="video-btn">👇 First Watch This Full Video 👇</div>
+  </div>
+
+  <!-- Video -->
+  <div style="text-align:center;">
+    <iframe width="100%" height="315"
+      src="https://www.youtube.com/embed/ATv9MhH5FfY?si=VE8GYZpzUHYOh1IF"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      style="max-width:800px;border:0;margin-bottom:30px;"></iframe>
+  </div>
+
+  <!-- Coach Intro -->
+  <div class="coach-intro">
+    <div class="coach-tag">👩‍🏫 Your Coach</div>
+    <h2 style="font-size:26px;margin:10px 0 20px;">Hi, Nasreen Fatima this side!</h2>
+    <ul style="list-style:none;padding:0;margin:0 auto 20px;max-width:300px;text-align:left;">
+      <li style="margin-bottom:10px;font-size:18px;">🏡 Ek Student</li>
+      <li style="margin-bottom:10px;font-size:18px;">💻 Freelancer</li>
+      <li style="margin-bottom:10px;font-size:18px;">🎯 Aur Online Money Maker Coach hoon</li>
+    </ul>
+
+    <div class="vision-box">
+      <strong style="display:block;margin-bottom:10px;">🎯 Mera Vision Simple Hai:</strong>
+      <div style="font-weight:bold;">"Empowering Females" - Har us ladki ke liye jo sirf sapne sochti nahi, unhe jeena chahti hai.</div>
+    </div>
+
+    <!-- Counters -->
+    <div class="counters">
+      <div class="counter-box">
+        <div class="counter" data-target="2" style="font-size:26px;font-weight:bold;color:#ffb642;">0</div>
+        <div style="font-size:14px;color:#d8b678;">Years Experience</div>
+      </div>
+      <div class="counter-box">
+        <div class="counter" data-target="1000" style="font-size:26px;font-weight:bold;color:#ffb642;">0</div>
+        <div style="font-size:14px;color:#d8b678;">Students Helped</div>
+      </div>
+      <div class="counter-box">
+        <div class="counter" data-target="150000" style="font-size:26px;font-weight:bold;color:#ffb642;">₹0</div>
+        <div style="font-size:14px;color:#d8b678;">Monthly Earning (₹)</div>
+      </div>
+    </div>
+
+    <!-- OPEN FORM BUTTON -->
+    <button class="whatsapp-btn open-form">💬 Click to Message on WhatsApp</button>
+  </div>
+
+  <!-- Skills Section -->
+  <div class="skills-section">
+    <h2 style="font-size:24px;margin-bottom:10px;color:#ffb642;text-shadow:0 0 6px rgba(255,182,66,.4);">🌱 Aap Yahan Seekhenge</h2>
+    <p style="color:#d8b678;margin-bottom:30px;font-size:14px;">Real, skill-based aur sustainable online income opportunity</p>
+
+    <div class="features">
+      <div class="feature-box">
+        <div class="feature-icon">✨</div>
+        <div style="font-weight:bold;font-size:13px;color:#ffb642;margin-bottom:6px;">Digital Skills</div>
+        <div style="color:#cfcfcf;font-size:12px;">Market skills in demand</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">📞</div>
+        <div style="font-weight:bold;font-size:13px;color:#ffb642;margin-bottom:6px;">Phone Se Kaam</div>
+        <div style="color:#cfcfcf;font-size:12px;">Work via phone</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">⏰</div>
+        <div style="font-weight:bold;font-size:13px;color:#ffb642;margin-bottom:6px;">Flexible Timing</div>
+        <div style="color:#cfcfcf;font-size:12px;">Work on your schedule</div>
+      </div>
+      <div class="feature-box">
+        <div class="feature-icon">🎯</div>
+        <div style="font-weight:bold;font-size:13px;color:#ffb642;margin-bottom:6px;">Online Identity</div>
+        <div style="color:#cfcfcf;font-size:12px;">Build your presence</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <h2 style="text-align:center;font-size:26px;margin-bottom:30px;text-shadow:0 0 8px rgba(255,182,66,.2);">✨ What Happens When You Join?</h2>
+
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div class="card animate-left">
+        <div class="step">1</div>
+        <div>
+          <h3 style="margin:0 0 6px;font-size:16px;color:#ffb642;">Instant Connection</h3>
+          <p style="margin:0;font-size:14px;color:#ccc;">As soon as you message on WhatsApp, you instantly connect with me (Nasreen Fatima) for personal guidance.</p>
+        </div>
+      </div>
+
+      <div class="card animate-right">
+        <div class="step">2</div>
+        <div>
+          <h3 style="margin:0 0 6px;font-size:16px;color:#ffb642;">Complete Access</h3>
+          <p style="margin:0;font-size:14px;color:#ccc;">Unlock step-by-step training and support system designed to help you grow fast.</p>
+        </div>
+      </div>
+
+      <div class="card animate-left">
+        <div class="step">3</div>
+        <div>
+          <h3 style="margin:0 0 6px;font-size:16px;color:#ffb642;">Daily Mentorship</h3>
+          <p style="margin:0;font-size:14px;color:#ccc;">Get guidance, motivation & support daily to keep you moving forward.</p>
+        </div>
+      </div>
+
+      <div class="card animate-right">
+        <div class="step">4</div>
+        <div>
+          <h3 style="margin:0 0 6px;font-size:16px;color:#ffb642;">Start Earning</h3>
+          <p style="margin:0;font-size:14px;color:#ccc;">Begin your online journey with full confidence from Week 1.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:30px;">
+      <button class="whatsapp-btn open-form">💬 Click to Message on WhatsApp</button>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <p>"What work will I do?", "Is this legit?", "How much time will I need?"</p>
+
+    <div class="faq-item">
+      <div class="faq-question">What kind of work will I be doing?</div>
+      <div class="faq-answer">You'll be learning in-demand digital skills like social media management, content creation, digital marketing, and online business strategies. The work is completely legitimate and skill-based.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">When can I expect to start earning?</div>
+      <div class="faq-answer">Most of my students start seeing income within the first month of consistent effort. However, sustainable income typically builds up over 2-3 months as you develop your skills.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do I need any prior experience or technical knowledge?</div>
+      <div class="faq-answer">No prior experience needed! I'll guide you step-by-step from basics to advanced. All you need is dedication, a smartphone/laptop, and internet connection.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">How much time daily do I need to give?</div>
+      <div class="faq-answer">Ideally 2-3 hours daily is enough to start building results. Flexibility is there, you can manage as per your schedule.</div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section class="cta-section">
+    <h2 style="font-size:26px;margin-bottom:15px;color:#ffb642;">🚀 Ready To Start?</h2>
+    <p style="margin-bottom:25px;color:#d8b678;">Click below to connect with me on WhatsApp right now and kickstart your journey!</p>
+    <button class="whatsapp-btn open-form">💬 Send Message on WhatsApp</button>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Made with ❤️ by Nasreen Fatima | All Rights Reserved © 2025</p>
+    <p>Disclaimer: This is not a get-rich-quick scheme. It requires learning and consistent effort.</p>
+  </div>
+
+  <!-- Modal Form -->
+  <div class="modal" id="formModal">
+    <div class="modal-content">
+      <span class="close-btn" id="formCloseBtn">✖</span>
+      <h2>Fill This Form</h2>
+      <form id="leadForm">
+        <label>Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label>Phone:</label>
+        <input type="text" id="phone" name="phone" required />
+        <label>Age:</label>
+        <input type="number" id="age" name="age" required />
+        <label>Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">--Select Gender--</option>
+          <option>Female</option>
+          <option>Male</option>
+          <option>Other</option>
+        </select>
+        <label>Profession:</label>
+        <select id="profession" name="profession" required>
+          <option value="">--Select Profession--</option>
+          <option>Student</option>
+          <option>Job Person</option>
+          <option>Business Owner</option>
+          <option>House Wife</option>
+        </select>
+        <button type="submit">Send msg on WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter=>{
+      const target = +counter.getAttribute('data-target');
+      const update = ()=>{
+        let count = +counter.innerText.replace(/[^0-9]/g,'');
+        const inc = target/100;
+        if(count < target){
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(update,30);
+        }else{
+          counter.innerText = target.toLocaleString();
+        }
+      };
+      update();
+    });
+
+    // Scroll Animation
+    const cards = document.querySelectorAll('.card');
+    window.addEventListener('scroll', ()=>{
+      const trigger = window.innerHeight / 1.1;
+      cards.forEach(card=>{
+        const top = card.getBoundingClientRect().top;
+        if(top < trigger) card.classList.add('visible');
+      });
+    });
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(q=>{
+      q.addEventListener('click', ()=> q.parentElement.classList.toggle('active'));
+    });
+
+    // Modal Handling
+    const formModal = document.getElementById('formModal');
+    document.querySelectorAll('.open-form').forEach(btn=>{
+      btn.addEventListener('click', ()=> formModal.style.display='flex');
+    });
+    document.getElementById('formCloseBtn').addEventListener('click', ()=> formModal.style.display='none');
+    window.addEventListener('click', e=>{ if(e.target===formModal) formModal.style.display='none'; });
+
+    // Form Submission
+    const leadForm = document.getElementById('leadForm');
+    const WHATSAPP_NUMBER = '918368961254'; // +91 8368961254
+
+    leadForm.addEventListener('submit', async e=>{
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const age = document.getElementById('age').value.trim();
+      const gender = document.getElementById('gender').value;
+      const profession = document.getElementById('profession').value;
+
+      const data = { name, phone, age, gender, profession };
+
+      // Send to Google Sheets (runs in background; replace URL with your Apps Script if needed)
+      try{
+        fetch('https://script.google.com/macros/s/AKfycbzR34QN8EQCmp6pJsI9LCsvJhS5Ts2PpeO5UGZ7jAeLXZ4lMhxmIk8NN0hmoKc54DCCXw/exec', {
+          method:'POST',
+          body: JSON.stringify(data)
+        }).catch(()=>{});
+      }catch(e){}
+
+      // Fire FB Lead event
+      try{ fbq && fbq('track','Lead',{value:0.00,currency:'INR'}); }catch(e){}
+
+      // WhatsApp Redirect with fixed message (no user details)
+      const text = encodeURIComponent('Hello Nasreen mam, I am intrested in this work ple share me work detels');
+      const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+      window.open(link,'_blank');
+
+      formModal.style.display='none';
+    });
+  </script>
+</body>
+</html>
